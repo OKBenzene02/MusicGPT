@@ -1,0 +1,14 @@
+# Files from the MusicGPT Model folder
+MusicGPT/dataset/
+MusicGPT/Generation-2.png
+MusicGPT/Generation-3.png
+MusicGPT/custom_wordlevel_english.json
+MusicGPT/custom_wordlevel_hindi.json
+MusicGPT/new_custom_wordlevel_english.json
+MusicGPT/Final outputs
+
+# Files from the Flask server
+flask-server/audio_files
+flask-server/prompts
+flask-server/requirements.txt
+flask-server/Final outputs

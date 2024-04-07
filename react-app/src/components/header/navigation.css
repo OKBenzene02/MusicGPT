@@ -1,0 +1,281 @@
+:root{
+    --borderRadius: .8rem;
+    --borders: .08rem solid rgb(0, 0, 0);
+    --primary: #F4CE73;
+    --secondary1: #79CCBF;
+    --secondary2: #27323A;
+}
+
+/* --------------- Gradient Design ----------------  */
+
+.gradient{
+    width: 50rem; 
+    height: 10rem; 
+    border-radius: 40rem; 
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse at 70% 60%, #c3e060 0%, rgba(195, 224, 96, 0) 90%), 
+    radial-gradient(ellipse at 30% 30%, #c3e060 0%, rgba(195, 224, 96, 0) 60%), radial-gradient(ellipse at bottom left,  
+    #00a3cb 0%,  rgba(0, 163, 203, 0) 70%), linear-gradient(135deg, rgba(18, 46, 119, 0) 0%, rgba(18, 46, 119, 0) 75%,
+     #122e77 100%), linear-gradient(to right, #625793 0%, #d55d64 35%, #e49129 65%, #c0671c 100%); 
+    background-blend-mode: lighten,saturation,screen,color,color-dodge,multiply; 
+    filter: blur(100px);
+    animation: animateGradient 5s infinite linear;
+}
+
+.top-left {
+    top: -15%; /* Adjust the top position as needed */
+    left: -10%; /* Adjust the left position as needed */
+    position: absolute;
+    z-index: -1;
+}
+
+.top-right {
+    width: 1rem;
+    height: 1rem;
+    top: -22%; /* Adjust the top position as needed */
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    right: 0;
+}
+
+/* --------------- Navigation Container --------------- */
+.navigation-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 1rem;
+    gap: .5rem;
+}
+
+.navigation-container > .combined-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100dvw;
+    gap: .5rem;
+    margin-left: 2rem;
+}
+
+.navigation-container > .combined-container > .logo-container img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50.5px;
+    padding: .5rem;
+    border-radius: 1rem;
+    background-color: var(--primary);
+    transition: border-radius .2s ease-out;
+}
+
+.navigation-container > .combined-container > .logo-container img:hover{
+    border-radius: .4rem;
+}
+
+.navigation-container > .combined-container > .navigation-items {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: .2rem;
+    padding: .4rem;
+    align-items: center;
+    min-width: 40dvw;
+    border-radius: var(--borderRadius);
+    background-color: var(--secondary2);
+}
+
+.navigation-items > .navigation-content a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #e3e3e3;
+    padding: .4rem 1.5rem;
+    border-radius: var(--borderRadius);
+    border: .1rem solid #e3e3e3;
+    font-size: 1dvw;
+    transition: background-color .2s ease-in, border-radiu .2s ease-out;
+}
+
+.navigation-items > .navigation-content a:hover{
+    background-color: var(--primary);
+    color: var(--secondary2);
+    border: .1rem solid var(--primary);
+    border-radius: .5rem;
+}
+
+.navigation-items > .navigation-content .active{
+    background-color: var(--primary);
+    color: var(--secondary2);
+    border: .1rem solid var(--primary);
+    border-radius: .5rem;
+}
+
+
+.navigation-container > .additional-container{
+    display: flex;
+    flex-direction: row;
+    width: 30dvw;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.additional-container > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1dvw;
+}
+
+.additional-container > .login{
+    position: relative;
+    overflow: hidden;
+}
+
+.additional-container > .login::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially, the line has zero width */
+    height: 2px; /* Adjust the height of the line */
+    background-color: black; /* Adjust the color of the line */
+    transition: width 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.additional-container > .login:hover::before {
+    width: 100%; /* On hover, expand the line to 100% width */
+}
+
+.additional-container > .followme {
+    padding: 1rem 3rem;
+    border: 1px solid black;
+    border-radius: 1.3rem; /* Make the border round */
+    position: relative; /* Position the blob */
+}
+
+.additional-container > .followme::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%; /* Make the blob bigger than the circle */
+    height: 115%;
+    border: 1px solid black; /* Adjust border color as needed */
+    border-radius: 5.5rem 3rem;
+    z-index: -1; /* Ensure the blob is behind the circle */
+    rotate: -4deg;
+    animation: changeBorderRadius 4s infinite linear; /* Define the animation */
+}
+
+
+ 
+/* ======================================== Animations ======================================== */
+
+@keyframes changeBorderRadius {
+    0% {
+        border-radius: 5.5rem 3rem; /* Initial border radius */
+        rotate: -4deg;
+    }
+    25% {
+        border-radius: 3rem 3rem; /* Intermediate border radius */
+        rotate: -3deg;
+    }
+    50% {
+        border-radius: 3rem 5.5rem; /* Final border radius */
+        rotate: -2deg;
+    }
+    75%{
+        border-radius: 5.5rem 5.5rem;
+        rotate: -3deg;
+    }
+    100% {
+        border-radius: 5.5rem 3rem;
+        rotate: -4deg;
+    }
+}
+
+@keyframes animateGradient{
+
+    0%{
+        width: 50rem;
+        height: 10rem;
+    }
+    25%{
+        width: 48rem;
+        height: 8rem;
+    }
+    50%{
+        width: 46rem;
+        height: 10rem;
+    }
+    75%{
+        width: 48rem;
+        height: 12rem;
+    }
+    100%{
+        width: 50rem;
+        height: 10rem;
+    }
+}
+
+/* Adjustments for tablets and small desktops */
+@media (max-width: 1024px) {
+    .navigation-container, .navigation-container > .combined-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation-container > .combined-container > .navigation-items {
+        width: auto; /* Adjust based on your layout */
+        margin-top: 1rem; /* Add some space between logo and navigation items */
+    }
+
+    .additional-container {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+    .navigation-container {
+        flex-wrap: wrap;
+    }
+    .gradient {
+        width: 100%; /* Make the gradient background full width */
+        height: auto; /* Adjust height to maintain aspect ratio or fit content */
+        border-radius: 0; /* Optional: remove border-radius for full-width effect */
+    }
+
+    .navigation-container, .navigation-container > .combined-container, .navigation-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation-container > .combined-container > .logo-container img {
+        width: 40px; /* Reduce logo size */
+    }
+
+    .navigation-items > .navigation-content a {
+        padding: .2rem 1rem; /* Adjust padding */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .additional-container > .followme {
+        padding: .5rem 1.5rem; /* Adjust button padding */
+    }
+}
+
+/* Example for very small devices like small smartphones */
+@media (max-width: 480px) {
+    .navigation-container > .combined-container > .navigation-items {
+        justify-content: center;
+    }
+
+    .navigation-items > .navigation-content a {
+        padding: .2rem .5rem; /* Further reduce padding */
+        font-size: 12px; /* Further reduce font size */
+    }
+}

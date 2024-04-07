@@ -1,0 +1,207 @@
+.model-server {
+    margin: 1rem;
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    border: 1px solid rgb(37, 202, 12);
+    width: max-content;
+    position:fixed ;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    font-size: 9px;
+    box-shadow: 0 0 10px -5px rgb(37, 202, 12);
+    color: rgb(37, 202, 12);
+    background: rgba(37, 202, 12, 0.099);
+}
+
+.piano-container{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: .8rem;
+    background-color: #fff;
+    z-index: -1;
+    border: 1px solid var(--secondary1);
+    border-radius: 1rem;
+    box-shadow: 0 0 40px -15px var(--secondary1);
+}
+
+/* ====================== Section 1 ====================== */
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.inputs > p{
+    font-size: 14px;
+    padding: .5rem 2rem;
+    border: 1px solid crimson;
+    border-radius: .7rem;
+    box-shadow: 0 0 10px -5px crimson;
+    color: crimson;
+    filter: drop-shadow(0 0 30px crimson);
+    font-weight: 700;
+}
+
+.inputs .slider-container {
+    display: flex;
+    gap: 1rem;
+    font-size: 14px;
+    letter-spacing: .2px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.inputs .slider-container > input {
+    -webkit-appearance: none;
+    width: 10rem;
+    background: var(--secondary2);
+    height: .3rem;
+    border-radius: 1rem;
+    opacity: 0.8;
+    transition: opacity .2s ease-in, transform .2s ease-in;
+}
+
+.inputs .slider-container > input:hover{
+    opacity: 1;
+}
+
+.inputs .slider-container > input::-webkit-slider-thumb{
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: #eeb225;
+    border-radius: 50%;
+    border: 2px solid #bd8c1a;
+    cursor: pointer;
+}
+
+.inputs .buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.inputs .buttons button{
+    padding: .5rem 2rem;
+    background: none;
+    border: 2px solid var(--primary);
+    border-radius: .8rem;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background .2s ease-out;
+    cursor: pointer;
+}
+
+.inputs .buttons button:hover{
+    background: var(--secondary2);
+    border-color: var(--secondary2);
+    color: var(--primary);
+}
+
+.inputs .buttons button:disabled{
+    opacity: .5;
+}
+
+.pianoBoard {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.pianoBoard > p {
+    letter-spacing: .5px;
+    font-weight: 300;
+}
+
+.pianoBoard .drag-drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+    border: 1.6px dashed var(--primary);
+    border-radius: 1rem;
+    cursor: pointer; 
+    height: 100%;
+    transition: background .2s ease-in;
+  }
+  
+.pianoBoard .drag-drop:hover {
+    background: #f4cd732b;
+  }
+  
+.pianoBoard  .drag-drop label {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+.pianoBoard .drag-drop input {
+    padding: .5rem .8em;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    
+}
+
+.pianoBoard .drag-drop #fileUpload::file-selector-button {
+    padding: .35rem 1rem;
+    background: none;
+    border: 1px solid var(--primary);
+    border-radius: .7rem;
+    font-weight: 550;
+    transition: background .2s ease-in;
+    cursor: pointer;
+}
+
+.pianoBoard .drag-drop #fileUpload::file-selector-button:hover {
+    background-color: var(--secondary2);
+    border: 1px solid var(--secondary2);
+    color: var(--primary);
+    font-weight: 550;
+}
+
+/* ===================== Section 2 ========================= */
+
+.piano-container .horizontal {
+    margin: 2rem;
+    width: 50%;
+    height: 1.5px;
+    background: var(--secondary1);
+    align-self: center;
+}
+
+.piano-container .generated-content {
+    margin: 1rem;
+}
+
+.piano-container .generated-content .heading{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.piano-container .generated-content .heading span {
+    color: var(--secondary1);
+}
+
+.piano-container .generated-content .audio-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ---------------------- Responsiveness for the mobile devices -------------------------- */
+@media (max-width:1024px) {
+    .pianoBoard {
+        flex-direction: column;
+    }
+    
+}

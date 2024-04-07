@@ -1,0 +1,23 @@
+.contact-me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+.contact-me img{
+    width: 50%;
+    filter: drop-shadow(0 0 50px var(--primary));
+}
+
+.contact-me p {
+    font-size: 34px;
+    margin: 1rem;
+    font-weight: 700;
+}
+
+.contact-me p span{
+    color: crimson;
+    filter: drop-shadow(0 0 30px crimson);
+}

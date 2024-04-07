@@ -1,0 +1,200 @@
+.footer-container {
+    width: 100%;
+    height: 70vh;
+    background-color: var(--secondary2);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.container {
+    width: 20%;
+    height: 100%;
+    --s: 60px;
+    --c1: #180a22;
+    --c2: #5b42f3;
+    --_g: radial-gradient(
+      25% 25% at 25% 25%,
+      var(--c1) 99%,
+      rgba(0, 0, 0, 0) 101%
+    );
+    background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
+        calc(2 * var(--s)),
+      var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
+        var(--s),
+      repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
+        calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+        clip-path: polygon(0 0, 85% 0, 45% 100%, 0 100%);
+  }
+  
+  /* ============= Networks Section ================= */
+  .networks-section{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+
+  /* ========= Logo Heading ========== */
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .logo > img{
+    width: 45px;
+    padding: .2rem;
+    background-color: #fff;
+    border-radius: .7rem;
+
+  }
+
+  .logo > p{
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .logo > p > span{
+    color: var(--primary);
+  }
+
+  /* ============== Follow My Works ================ */
+.find-me > p{
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    color: #fff;
+}
+
+.find-me > .network-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.find-me > .network-links .network-link a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: border-radius .2s ease-out;
+    text-decoration: none;
+  color: black;
+}
+
+
+
+.find-me > .network-links .network-link a:hover  {
+    background: var(--primary);
+    border-radius: .5rem;
+
+}
+
+/* ================= Contact form ================== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form h1 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.contact-form h1 span{
+    color: var(--primary);
+}
+
+.contact-form img{
+    height: 30%;
+    position: absolute;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 5rem;
+    width: 50%;
+    padding: 1rem;
+    background-color: var(--primary);
+    border-radius: 1rem;
+}
+
+.contact-form form label {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.contact-form form input, .contact-form form textarea{
+    border: 1px solid var(--secondary2);
+    padding: .7rem;
+    border-radius: .6rem;
+    font-size: 13px;
+}
+
+.contact-form form button {
+    border: 1px solid var(--secondary2);
+    padding: .7rem;
+    border-radius: .6rem;
+    background: none;
+    border: 2px solid var(--secondary2);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease-in;
+}
+
+.contact-form form button:hover {
+    background-color: var(--secondary2);
+    color: var(--primary);
+}
+
+/* ----------------- Responsive for mobile devices ---------------- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    clip-path: none; /* Reset or adjust the clip-path for smaller screens if necessary */
+  }
+
+  .logo > p {
+    font-size: 30px; /* Adjust based on your needs */
+  }
+
+  .logo > img {
+    width: 35px; /* Adjust based on your needs */
+  }
+
+  .find-me > .network-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem;
+  }
+
+  .contact-form form {
+    width: 100%; /* Adjust to fit smaller screens */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .contact-form form button, .contact-form form input, .contact-form form textarea {
+    font-size: 16px; /* Adjust font size for better readability */
+  }
+}
